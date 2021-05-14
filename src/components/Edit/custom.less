@@ -1,0 +1,41 @@
+.vue-codemirror {
+  height: 100%;
+  font-family: monospace;
+}
+.CodeMirror {
+  height: calc(100% - 40px);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: monospace;
+  // 搜索
+  .CodeMirror-dialog {
+    background-color: #ddd;
+    color: #666;
+    border: 1px solid #cbcbcb;
+    border-top: 0 none;
+    overflow: hidden;
+    margin: 0;
+    padding: 4px 6px 0 4px;
+    position: absolute;
+    z-index: 99;
+    border-radius: 0px 0px 0px 5px;
+    border-right: 0 none;
+    right: 0;
+    top: 0;
+    left: auto;
+    white-space: normal;
+    width: 40%;
+    height: 40px;
+    // 搜索框
+    .CodeMirror-search-field {
+      background-color: #fff;
+      display: inline-block;
+      width: 80% !important;
+    }
+    // 搜索提示
+    .CodeMirror-search-hint {
+      display: none;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import ZuEdit from './components/Edit/index.vue';
 import ZuPreview from './components/Preview/index.vue';
 import ZuSplit from './components/Split/index.vue';
-import ZuRun from './components/ZuRun/index.vue';
+// import ZuRun from './components/ZuRun/ZuRun.vue';
 
 // 存储组件列表
 const components = [ZuEdit, ZuPreview, ZuSplit];
@@ -19,5 +19,5 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-export { ZuEdit, ZuPreview, ZuSplit, ZuRun };
+export { ZuEdit, ZuPreview, ZuSplit };
 export default install;

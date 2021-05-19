@@ -2,16 +2,16 @@
  * @Author: zulezhe
  * @Date: 2021-05-10 15:28:20
  * @LastEditors: zulezhe
- * @LastEditTime: 2021-05-13 10:28:35
+ * @LastEditTime: 2021-05-19 15:34:48
  * @Path: https://gitee.com/zulezhe/
  * @Description: $
 -->
 <template>
-  <div class="zu-run-container">
+  <div class="Zu-run-container">
     <div class="demo-split">
       <zu-split v-model="split">
         <div slot="left" class="demo-split-pane">
-          <zu-edit ref="mycodemirror" v-model="code" class="left-box" :options="cmOptions" @codeEditComplate="codeEditComplate" @handleRun="handleRun" @change="handleChange" @handleReset="handleReset" />
+          <zu-edit ref="mycodemirror" v-model="initCode" class="left-box" :options="cmOptions" @codeEditComplate="codeEditComplate" @handleRun="handleRun" @change="handleChange" @handleReset="handleReset" />
         </div>
         <div slot="right" class="demo-split-pane">
           <zu-preview v-if="runCodeHash" ref="runcode" class="right-box" :code="code" />
@@ -21,16 +21,16 @@
   </div>
 </template>
 <script>
-import ZuSplit from '../Split/index.vue';
-import ZuEdit from '../Edit/index.vue';
-import ZuPreview from '../Preview/index.vue';
+// import { ZuEdit, ZuPreview, ZuSplit } from '../../src/index';
+import { ZuEdit, ZuPreview, ZuSplit } from '../../lib/zu-run.umd';
+import code from './template';
 export default {
   name: 'ZuRun',
-  components: { ZuSplit, ZuEdit, ZuPreview },
-  props: ['code'],
+  components: { ZuEdit, ZuPreview, ZuSplit },
   data() {
     return {
-      initCode: this.code,
+      initCode: code,
+      code: code,
       split: 0.5,
       runCodeHash: true,
       cmOptions: {},
@@ -63,7 +63,6 @@ export default {
       this.$nextTick(() => {
         this.runCodeHash = true;
       });
-      // this.codeEdit.setValue(this.codeEdit.getValue());
       this.$refs.runcode.destroyCode();
       this.$refs.runcode.renderCode();
     },
@@ -74,7 +73,7 @@ export default {
 };
 </script>
 <style scoped lang="less">
-.zu-run-container {
+.Zu-run-container {
   width: 100%;
   height: 100%;
   background-color: #f3f4fa;

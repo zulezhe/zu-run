@@ -3,7 +3,7 @@
  * @Author: zulezhe
  * @Date: 2021-05-11 09:14:09
  * @LastEditors: zulezhe
- * @LastEditTime: 2021-05-13 15:34:35
+ * @LastEditTime: 2021-05-19 15:29:31
  * @Path: https://gitee.com/zulezhe/
  * @Description: $
 -->
@@ -44,7 +44,7 @@ export default {
     splitCode() {
       this.js = this.getSource(this.code, 'script').replace(/export default/, 'return ');
       this.css = this.getSource(this.code, 'style');
-      this.html = '<div ref="ZuRunPreview" id="zu-run-preview" style="width:100%;height:100%" >' + this.getSource(this.code, 'template') + '</div>';
+      this.html = '<div ref="ZuRunPreview" id="zu-run-preview" style="width:50%;height:100%" >' + this.getSource(this.code, 'template') + '</div>';
     },
     //挂载
     renderCode() {

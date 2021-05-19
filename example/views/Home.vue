@@ -2,7 +2,7 @@
  * @Author: zulezhe
  * @Date: 2021-05-10 15:28:20
  * @LastEditors: zulezhe
- * @LastEditTime: 2021-05-19 15:34:48
+ * @LastEditTime: 2021-05-19 16:27:50
  * @Path: https://gitee.com/zulezhe/
  * @Description: $
 -->
@@ -21,8 +21,8 @@
   </div>
 </template>
 <script>
-// import { ZuEdit, ZuPreview, ZuSplit } from '../../src/index';
-import { ZuEdit, ZuPreview, ZuSplit } from '../../lib/zu-run.umd';
+import { ZuEdit, ZuPreview, ZuSplit } from '../../src/index';
+// import { ZuEdit, ZuPreview, ZuSplit } from '../../lib/zu-run.umd';
 import code from './template';
 export default {
   name: 'ZuRun',

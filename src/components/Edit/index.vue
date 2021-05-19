@@ -2,7 +2,7 @@
  * @Author: zulezhe
  * @Date: 2021-05-11 09:09:56
  * @LastEditors: zulezhe
- * @LastEditTime: 2021-05-13 16:14:04
+ * @LastEditTime: 2021-05-19 16:36:10
  * @Path: https://gitee.com/zulezhe/
  * @Description: $
 -->
@@ -19,11 +19,21 @@
         复位
       </span>
     </div>
-    <textarea ref="textarea" class="editor" />
+    <vue-tabs>
+      <v-tab title="代码">
+        <textarea ref="textarea" class="editor" />
+      </v-tab>
+      <v-tab title="描述">
+        <div class="desc"></div>
+      </v-tab>
+    </vue-tabs>
   </div>
 </template>
 <script>
 import CodeMirror from 'codemirror';
+import { VueTabs, VTab } from 'vue-nav-tabs';
+//you can also import this in your style tag
+import 'vue-nav-tabs/themes/vue-tabs.css';
 import './index.js';
 //  插件
 import emmet from '@emmetio/codemirror-plugin';
@@ -32,6 +42,7 @@ import './custom.less';
 import Copy from '../../utils/clipboard.js';
 export default {
   name: 'ZuEdit',
+  components: { VueTabs, VTab },
   props: {
     cmOptions: {
       type: Object,
